@@ -1,0 +1,16 @@
+ffmpeg-python
+streamlit
+kokoro>=0.3.4
+soundfile
+fastapi
+uvicorn
+pydub
+inflect
+librosa
+fugashi
+jaconv
+mojimoji
+cn2an
+ordered-set
+jieba
+pypinyin
