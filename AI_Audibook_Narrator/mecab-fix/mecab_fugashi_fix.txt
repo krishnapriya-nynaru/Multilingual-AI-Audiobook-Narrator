@@ -1,0 +1,189 @@
+Fix: Install MeCab Utilities and Ensure mecab-dict-index Exists
+
+1️⃣ Uninstall and Reinstall MeCab & Required Packages  
+-----------------------------------------------------  
+Remove Existing Installations:  
+```bash
+sudo apt remove --purge -y mecab mecab-ipadic-utf8 libmecab-dev mecab-utils
+sudo apt autoremove -y
+sudo apt update
+```
+
+Reinstall MeCab and Dependencies:  
+```bash
+sudo apt install -y mecab mecab-ipadic-utf8 libmecab-dev mecab-utils
+```
+
+✅ This will install:  
+- **MeCab Core** (`mecab`)  
+- **ipadic dictionary** (`mecab-ipadic-utf8`)  
+- **Development libraries** (`libmecab-dev`)  
+- **Utilities** (`mecab-utils`, which includes `mecab-dict-index`)  
+
+2️⃣ Verify `mecab-dict-index` is Installed  
+-------------------------------------------  
+```bash
+which mecab-dict-index
+```
+
+Expected output:  
+```
+/usr/bin/mecab-dict-index
+```
+
+If the command is **not found**, locate it manually:  
+```bash
+sudo find / -name mecab-dict-index 2>/dev/null
+```
+
+Then use the full path:  
+```bash
+sudo /usr/bin/mecab-dict-index -d . -o . -f utf-8 -t utf-8
+```
+
+3️⃣ Rebuild the MeCab Dictionary  
+---------------------------------  
+```bash
+cd /usr/share/mecab/dic/ipadic
+sudo mecab-dict-index -d . -o . -f utf-8 -t utf-8
+```
+
+✅ This will regenerate:  
+- **sys.dic** (Main dictionary)  
+- **unk.dic** (Unknown word dictionary)  
+
+Verify the Dictionary Exists:  
+```bash
+ls /usr/share/mecab/dic/ipadic
+```
+
+Expected output:  
+```
+sys.dic  unk.dic  dicrc  matrix.def  pos-id.def  char.def
+```
+
+4️⃣ Check if MeCab is Using ipadic  
+-----------------------------------  
+```bash
+mecab -D
+```
+
+Expected output:  
+```
+filename:       /usr/share/mecab/dic/ipadic/sys.dic
+```
+
+If this works, **MeCab is fully functional**! ✅  
+
+5️⃣ Reinstall Python Bindings (`mecab-python3` and `fugashi`)  
+--------------------------------------------------------------  
+```bash
+pip uninstall -y mecab-python3 fugashi
+pip install --no-cache-dir --force-reinstall mecab-python3==1.0.5 unidic-lite fugashi
+```
+
+6️⃣ Fix: Restore the `mecabrc` Configuration File  
+--------------------------------------------------  
+If `/etc/mecabrc` is **missing**, restore it:  
+```bash
+echo "dicdir = /usr/share/mecab/dic/ipadic" | sudo tee /etc/mecabrc
+```
+
+✅ **Verify `mecabrc` exists:**  
+```bash
+ls -l /etc/mecabrc
+```
+
+Expected output:  
+```
+-rw-r--r-- 1 root root 42 Feb 8 12:34 /etc/mecabrc
+```
+
+7️⃣ Test MeCab in Python  
+-------------------------  
+Modify your Python test script (`backend.py` or another test file):  
+```python
+import os
+import fugashi
+
+# Ensure Python uses the correct MeCab dictionary
+os.environ["MECABRC"] = "/etc/mecabrc"
+
+tagger = fugashi.GenericTagger("-Owakati")
+
+print("✅ Fugashi successfully initialized!")
+print(tagger.parse("こんにちは世界"))
+```
+
+✅ Expected output:  
+```
+✅ Fugashi successfully initialized!
+こんにちは 世界
+```
+
+8️⃣ Fix: Rebuild Dictionary with Correct Encoding  
+-------------------------------------------------  
+If the dictionary is **not in UTF-8**, rebuild it:  
+
+Check Current Encoding:  
+```bash
+file /usr/share/mecab/dic/ipadic/*
+```
+
+If any files show `ISO-8859-1` or `ASCII`, they must be converted.  
+
+Rebuild Dictionary in UTF-8:  
+```bash
+cd /usr/share/mecab/dic/ipadic
+sudo /usr/lib/mecab/mecab-dict-index -d . -o . -f utf-8 -t utf-8
+```
+
+✅ This regenerates:  
+- **sys.dic**  
+- **unk.dic**  
+- **Other `.dic` files in UTF-8**  
+
+Verify Encoding:  
+```bash
+file /usr/share/mecab/dic/ipadic/sys.dic
+```
+
+It should **not** say `ISO-8859-1` or `ASCII`.  
+
+9️⃣ Restart FastAPI Server  
+--------------------------  
+```bash
+uvicorn backend:app --reload
+```
+
+🔟 Final Python Test for MeCab & Fugashi  
+----------------------------------------  
+Modify your Python script:  
+```python
+import os
+import fugashi
+
+# Ensure Python is using the correct MeCab dictionary
+os.environ["MECABRC"] = "/etc/mecabrc"
+
+tagger = fugashi.GenericTagger("-Owakati -d /usr/share/mecab/dic/ipadic")
+
+print("✅ Fugashi successfully initialized!")
+print(tagger.parse("こんにちは世界"))
+```
+
+✅ Expected output:  
+```
+✅ Fugashi successfully initialized!
+こんにちは 世界
+```
+
+✅ **Summary of Fixes**  
+----------------------  
+- ✅ **Reinstalled MeCab and utils (`mecab-utils`, `mecab-dict-index`).**  
+- ✅ **Rebuilt `sys.dic` and `unk.dic` with correct encoding.**  
+- ✅ **Restored `mecabrc` config file.**  
+- ✅ **Reinstalled `mecab-python3` and `fugashi`.**  
+- ✅ **Verified Python integration with MeCab.**  
+
+Now, **MeCab should work flawlessly with FastAPI and Fugashi!** 🎉 🚀  

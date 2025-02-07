@@ -6,7 +6,7 @@ This repository presents an AI-powered multilingual audiobook narrator that conv
 
 ## Table of Contents
 - [Key Features](#key-features)
-- [Supported Languages & Voices](#Supported Languages & Voices)
+- [Supported Languages & Voices](#key-features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Results & UI Screenshots](#results)
@@ -24,17 +24,45 @@ This repository presents an AI-powered multilingual audiobook narrator that conv
 ## Supported Languages & Voices 🌍
 This AI audiobook narrator currently supports the following languages and voices:
 
-Language	Code	Available Voices
-US English	us	af_heart, af_alloy, af_aoede, af_bella, af_jessica, am_adam, am_echo
-UK English	uk	bf_alice, bf_emma, bf_isabella, bm_daniel, bm_fable, bm_george
-Japanese	jp	jf_alpha, jf_gongitsune, jf_nezumi, jf_tebukuro, jm_kumo
-Mandarin Chinese	zh	zf_xiaobei, zf_xiaoni, zf_xiaoxiao, zm_yunjian, zm_yunxi
-Spanish	es	ef_dora, em_alex, em_santa
-French	fr	ff_siwis
-Hindi	hi	hf_alpha, hf_beta, hm_omega, hm_psi
-Italian	it	if_sara, im_nicola
-Brazilian Portuguese	pt	pf_dora, pm_alex, pm_santa
+## Supported Languages & Voices 🌍  
+This AI audiobook narrator currently supports the following languages and voices:  
 
+| **Language**            | **Code** | **Available Voices**                                      |
+|-------------------------|---------|-----------------------------------------------------------|
+| **US English**          | `us`     | af_heart, af_alloy, af_aoede, af_bella, af_jessica, af_kore, af_nicole, af_nova, af_river, af_sarah, af_sky, am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck, am_santa
+|
+| **UK English**          | `uk`     | bf_alice, bf_emma, bf_isabella, bf_lily, bm_daniel, bm_fable, bm_george, bm_lewis |
+| **Japanese**           | `jp`     | jf_alpha, jf_gongitsune, jf_nezumi, jf_tebukuro, jm_kumo  |
+| **Mandarin Chinese**   | `zh`     | zf_xiaobei, zf_xiaoni, zf_xiaoxiao, zf_xiaoyi, zm_yunjian, zm_yunxi, zm_yunxia, zm_yunyang |
+| **Spanish**            | `es`     | ef_dora, em_alex, em_santa                                |
+| **French**             | `fr`     | ff_siwis                                                 |
+| **Hindi**              | `hi`     | hf_alpha, hf_beta, hm_omega, hm_psi                      |
+| **Italian**            | `it`     | if_sara, im_nicola                                       |
+| **Brazilian Portuguese** | `pt`    | pf_dora, pm_alex, pm_santa                               |
+
+
+## Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator.git
+2. Change to Project directory
+    ```bash
+    cd AI_Audibook_Narrator
+3. Install required packages :
+    ```bash
+    pip install -r requirements.txt
+3. Install system Dependencies
+    ```bash
+    apt-get -qq -y install espeak-ng > /dev/null 2>&1
+
+## Results & UI Screenshots 📸
+### 🎨 AI Audiobook Narrator UI
+
+![alt text](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/demo_images/italian_image1.png?raw=true) 
+![alt text](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/demo_images/US_english_image2.png?raw=true) 
+
+### 📁 Audio Output Example
+Generated audio files are saved in the output_audio/ directory.
 
 
 ## Contributing 
