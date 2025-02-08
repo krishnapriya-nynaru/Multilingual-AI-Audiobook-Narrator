@@ -23,9 +23,7 @@ This repository presents an AI-powered multilingual audiobook narrator that conv
 
 ## Supported Languages & Voices 🌍
 This AI audiobook narrator currently supports the following languages and voices:
-
-## Supported Languages & Voices 🌍  
-This AI audiobook narrator currently supports the following languages and voices:  
+ 
 
 | **Language**            | **Code** | **Available Voices**                                      |
 |-------------------------|---------|-----------------------------------------------------------|
@@ -51,11 +49,45 @@ This AI audiobook narrator currently supports the following languages and voices
 3. Install required packages :
     ```bash
     pip install -r requirements.txt
-3. Install system Dependencies
+4. Install system Dependencies
     ```bash
     apt-get -qq -y install espeak-ng > /dev/null 2>&1
+**Note:** If you encounter any issues with MeCab, dictionary indexing, or Python integration (e.g., ***ModuleNotFoundError: No module named 'fugashi*** or ***RuntimeError: Unknown dictionary format***), follow the step-by-step guide in the [**mecab-fix**](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/mecab-fix/mecab_fugashi_fix.txt) folder. 
 
-## Results & UI Screenshots 📸
+Ensure that MeCab is properly installed, the dictionary is indexed correctly, and the correct environment variables are set. If the issue persists, try reinstalling MeCab, rebuilding the dictionary, and verifying the Python bindings.
+
+For additional help, check the official [**MeCab documentation**](https://github.com/taku910/mecab/) or open an issue in this repository."
+
+## Usage
+1. Run the FastAPI Backend
+    ```bash
+    uvicorn backend:app --host 0.0.0.0 --port 8000
+2. Start the Streamlit UI
+    ```bash
+    streamlit run main.py
+3. Interact with the UI
+    - Enter the text you want to convert to speech.
+    - Select the language and voice.
+    - Adjust narration speed.
+    - Click "Generate Audiobook" to create the audio.
+    - Listen to the generated speech or download the audiobook by clicking Download Audiobook button.
+4. Sample Inputs & Outputs  
+    - For reference, the input texts used for generating the audio samples along with voice used are stored in the `input_texts/` directory.  
+        - 📄 [Sample US English Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_us_english.txt)  
+        - 📄[Sample UK English Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)  
+        - 📄[Sample Japanese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt) 
+        - 📄 [Sample Mandarin Chinese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_french.txt) 
+        - 📄 [Sample Spanish Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_us_english.txt)    
+        - 📄 [Sample French Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_french.txt)
+        - 📄[Sample Hindi Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)
+        - 📄[Sample Italian Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)
+        - 📄[Sample Brazilian Portuguese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)  
+
+The corresponding generated audio files can be found in the `generated_audio/` directory.
+
+
+## Results & UI Screenshots
+
 ### 🎨 AI Audiobook Narrator UI
 
 ![alt text](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/demo_images/italian_image1.png?raw=true) 
@@ -64,6 +96,26 @@ This AI audiobook narrator currently supports the following languages and voices
 ### 📁 Audio Output Example
 Generated audio files are saved in the output_audio/ directory.
 
+📢 Here’s a sample of AI-generated audiobook narration.
+
+
+🎧 [Download Sample US English Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/US_English_output.wav)
+
+🎧 [Download Sample UK English Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/UK_English_output.wav)
+
+🎧 [Download Sample Japanese Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Japanese_output.wav)
+
+🎧 [Download Sample Mandarin Chinese Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Chinese_output.wav)
+
+🎧 [Download Sample Spanish Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Spanish_output.wav)
+
+🎧 [Download Sample French Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/French_output.wav)
+
+🎧 [Download Sample Hindi Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Hindi_output.wav)
+
+🎧[Download Sample Italian Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Italian_output.wav)
+
+🎧 [Download Sample Brazilian Portuguese Generated output](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/generated_audios/Brazilian%20Portuguese_output.wav)
 
 ## Contributing 
 Contributions are welcome! To contribute to this project:
@@ -74,7 +126,7 @@ Contributions are welcome! To contribute to this project:
 
 If you have any suggestions for improvements or features, feel free to open an issue!
 
-## Acknowledgments🌟
+## Acknowledgments  
 - [**FastAPI**](https://fastapi.tiangolo.com/) For the high-performance backend.
 - [**Streamlit**](https://streamlit.io/) For the interactive user interface.
 - [**Kokoro TTS**](https://huggingface.co/hexgrad/Kokoro-82M) For AI-driven text-to-speech synthesis. 

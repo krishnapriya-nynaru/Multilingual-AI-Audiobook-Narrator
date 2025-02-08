@@ -1,0 +1,17 @@
+Pronóstico del Tiempo en Madrid
+¡Buenos días! Este es el pronóstico del tiempo para la ciudad de Madrid.
+
+Hoy se espera un día mayormente soleado, con algunas nubes dispersas en la mañana. La temperatura máxima alcanzará los 25 grados Celsius, mientras que la mínima descenderá hasta 15 grados por la noche.
+
+El viento soplará ligeramente desde el noreste, con ráfagas de hasta 20 kilómetros por hora. La humedad relativa se mantendrá en un 45 por ciento, y no hay probabilidades de lluvia a lo largo del día.
+
+Para los próximos días, se prevé un ascenso gradual de la temperatura, llegando a los 28 grados el fin de semana. Se recomienda llevar ropa ligera y mantenerse bien hidratado.
+
+Resumen del día
+Mañana: Soleado, 18 grados Celsius
+Tarde: Parcialmente nublado, 25 grados Celsius
+Noche: Fresco y despejado, 15 grados Celsius
+
+Disfrute del buen tiempo y no olvide aplicarse protector solar.
+
+Voice : ef_dora
