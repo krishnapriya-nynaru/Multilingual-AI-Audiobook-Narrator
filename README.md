@@ -73,15 +73,15 @@ For additional help, check the official [**MeCab documentation**](https://github
     - Listen to the generated speech or download the audiobook by clicking Download Audiobook button.
 4. Sample Inputs & Outputs  
     - For reference, the input texts used for generating the audio samples along with voice used are stored in the `input_texts/` directory.  
-        - 📄 [Sample US English Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_us_english.txt)  
-        - 📄[Sample UK English Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)  
-        - 📄[Sample Japanese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt) 
-        - 📄 [Sample Mandarin Chinese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_french.txt) 
-        - 📄 [Sample Spanish Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_us_english.txt)    
-        - 📄 [Sample French Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_french.txt)
-        - 📄[Sample Hindi Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)
-        - 📄[Sample Italian Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)
-        - 📄[Sample Brazilian Portuguese Input](https://github.com/your-username/your-repo/blob/main/input_texts/sample_japanese.txt)  
+        - 📄 [Sample US English Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/US_English_test.txt)  
+        - 📄[Sample UK English Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/UK_English_test.txt)  
+        - 📄[Sample Japanese Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Japanese_test.txt) 
+        - 📄 [Sample Mandarin Chinese Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Chinese_test.txt) 
+        - 📄 [Sample Spanish Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Spanish_test.txt)    
+        - 📄 [Sample French Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/French_test.txt)
+        - 📄[Sample Hindi Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Hindi_test.txt)
+        - 📄[Sample Italian Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Italian_test.txt)
+        - 📄[Sample Brazilian Portuguese Input](https://github.com/krishnapriya-nynaru/Multilingual-AI-Audiobook-Narrator/blob/main/AI_Audibook_Narrator/input_texts/Brazilian_Portuguese_test.txt)  
 
 The corresponding generated audio files can be found in the `generated_audio/` directory.
 
